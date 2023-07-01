@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour {
     private float moveTime;
     private Coroutine movingCoroutine;
     [SerializeField] private float speed = 1f;
+    [SerializeField] private float movementLevel = -7;
+    private bool canMove;
 
     void Update() {
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended) {
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private bool IsPointInMovingArea(Vector2 point) {
-        return point.x > -9 && point.x < 9 && point.y < -9 && point.y > -19;
+        return point.y < movementLevel;
     }
 
     private void StartCoroutine() {

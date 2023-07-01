@@ -5,6 +5,9 @@ using UnityEngine;
 public class MainCannonShot : MonoBehaviour {
 
     [SerializeField] private float rotationSpeed = 90f;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform firePoint;
+    [SerializeField] private Transform projectilesContainer;
     private Coroutine rotationCoroutine;
 
     void Update() {
@@ -12,6 +15,7 @@ public class MainCannonShot : MonoBehaviour {
             var touchWordPostion = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
             if (touchWordPostion.y > -3.5) {
                 RotateToNewPosition(touchWordPostion);
+                Shoot(touchWordPostion);
             }
         }
     }
@@ -39,5 +43,16 @@ public class MainCannonShot : MonoBehaviour {
             yield return null;
         }
         transform.rotation = targetRotation;
+    }
+
+    private void Shoot(Vector2 touchPosition) {
+        var shootDirection = new Vector2(touchPosition.x, Mathf.Abs(touchPosition.y)).normalized;
+        var obj = Instantiate(projectile, firePoint.position, Quaternion.identity, projectilesContainer);
+        var controller = obj.GetComponent<MainCannonProjectile>();
+        if(controller != null) {
+            controller.Initialize(shootDirection);
+        }else {
+            throw new System.Exception("Projectile does not extends Projectile class");
+        }
     }
 }
