@@ -1,10 +1,14 @@
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
-    [SerializeField] private EnemyData enemyData;
+   private EnemyBase enemyBase;
+
+   private void Awake() {
+        enemyBase = GetComponent<EnemyBase>();
+   }
 
     void Update() {
-        transform.Translate(Vector3.down * enemyData.speed * GameManager.instance.CurrentDifficulty.speedMultiplier * Time.deltaTime);
+        transform.Translate(Vector3.down * enemyBase.EnemyData.speed * GameManager.Instance.CurrentDifficulty.speedMultiplier * Time.deltaTime);
     }
     
 }

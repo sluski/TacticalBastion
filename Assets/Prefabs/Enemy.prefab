@@ -8,13 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8043864169965565806}
+  - component: {fileID: 5701009290489496497}
   - component: {fileID: 8264097913912953335}
   - component: {fileID: -3981217421642329341}
   - component: {fileID: 1629018269}
   - component: {fileID: -3881589383007963881}
   - component: {fileID: 922452941618036201}
   - component: {fileID: -1663678425700511620}
+  - component: {fileID: -1683287388868261061}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -22,21 +23,26 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8043864169965565806
-Transform:
+--- !u!224 &5701009290489496497
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3809425536119137426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.6929705, y: -6.8093166, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.6929705, y: -6.8093166}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &8264097913912953335
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -148,8 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b9d54ab72af844192357a8cb550aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 6d5497b14f546fc41a00e62e0fb1d9fa, type: 2}
-  difficultySettings: {fileID: 11400000, guid: 443e6ba4fa57d3a46b8662cd1283dc12, type: 2}
 --- !u!114 &922452941618036201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,8 +166,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 452ed843ca1eb864d8b67270fddb756c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 6d5497b14f546fc41a00e62e0fb1d9fa, type: 2}
-  difficultySettings: {fileID: 11400000, guid: 443e6ba4fa57d3a46b8662cd1283dc12, type: 2}
 --- !u!114 &-1663678425700511620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,5 +178,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf33add2946ce494f870d8fbd4043869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
+--- !u!114 &-1683287388868261061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3809425536119137426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca436f54395259940bc3784829a95fdd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 6d5497b14f546fc41a00e62e0fb1d9fa, type: 2}
-  difficultySettings: {fileID: 11400000, guid: 443e6ba4fa57d3a46b8662cd1283dc12, type: 2}

@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec9c9a4d237d93545b41b9c747639141, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3809425536119137426, guid: ee2eb432deb15e74fa00a6db7182226f, type: 3}
   minX: -8.5
   maxX: 8.5
   spownDelay: 2
@@ -265,6 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 551500150}
   - component: {fileID: 551500149}
+  - component: {fileID: 551500151}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -284,7 +284,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b991dd7f33f1dd042ab1068183811fff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentDifficulty: {fileID: 11400000, guid: 443e6ba4fa57d3a46b8662cd1283dc12, type: 2}
+  CurrentDifficulty: {fileID: 11400000, guid: 87d901d74b2b9ae4384d97128b797b13, type: 2}
+  OnWaweLoad:
+    m_PersistentCalls:
+      m_Calls: []
+  wawe: {fileID: 11400000, guid: 920cfb06e924b5441a21da41c2fdd831, type: 2}
 --- !u!4 &551500150
 Transform:
   m_ObjectHideFlags: 0
@@ -300,6 +304,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &551500151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 551500148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8863e2ab05d69f94fb7da3c83ae61804, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy1: {fileID: 3809425536119137426, guid: ee2eb432deb15e74fa00a6db7182226f, type: 3}
+  enemy2: {fileID: 0}
+  enemy3: {fileID: 0}
 --- !u!1001 &1320918042
 PrefabInstance:
   m_ObjectHideFlags: 0
