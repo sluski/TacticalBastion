@@ -6,7 +6,7 @@ public class EnemyHealth : Health {
 
     private void Awake() {
         enemyBase = GetComponent<EnemyBase>();
-        health = Mathf.RoundToInt(enemyBase.EnemyData.health * GameManager.Instance.CurrentDifficulty.healthMultiplier);
+        health = Mathf.RoundToInt(enemyBase.EnemyData.health * GameManager.Instance.DifficultyManager.CurrentDifficulty.healthMultiplier);
     }
 
     protected override void DestroyMe() {

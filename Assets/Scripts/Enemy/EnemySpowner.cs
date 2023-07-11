@@ -10,13 +10,16 @@ public class EnemySpowner : MonoBehaviour {
     private Queue<GameObject> spownQueue = new Queue<GameObject>();
 
     private void Start() {
-        GameManager.Instance.OnWaweLoad.AddListener(HandleLoadWaweEvent);
+        GameManager.Instance.WaweManager.OnWaweLoad.AddListener(HandleLoadWaweEvent);
     }
 
     private void Update() {
         if(spownQueue.Count != 0 && timeSinceLastSpown > spownDelay) {
             Instantiate(spownQueue.Dequeue(), randomEnemyPositon(), Quaternion.identity, transform);
             timeSinceLastSpown = 0;
+            GameManager.Instance.WaweManager.WaweCompleted = false;
+        } else if(spownQueue.Count == 0) {
+            GameManager.Instance.WaweManager.WaweCompleted = true;
         }
         timeSinceLastSpown += Time.deltaTime;
     }
@@ -27,7 +30,7 @@ public class EnemySpowner : MonoBehaviour {
 
     private void HandleLoadWaweEvent(Wawe wawe) {
         foreach(EnemyData enemy in wawe.enemies) {
-            spownQueue.Enqueue(EnemyPerfabsManager.Instance.GetPrefabByEnum(enemy.enemyType));
+            spownQueue.Enqueue(enemy.myGameObject);
         }
     } 
 }

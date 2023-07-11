@@ -4,11 +4,9 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-    public DifficultySettings CurrentDifficulty;
+    public WaweManager WaweManager;
+    public DifficultyManager DifficultyManager;
 
-    public WaweLoadEvent OnWaweLoad;
-
-    public Wawe wawe;
 
     private void Awake() {
         if (Instance == null) {
@@ -17,19 +15,9 @@ public class GameManager : MonoBehaviour {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }
 
-    private void Start() {
-        LoadWawe(wawe);
+        WaweManager = GetComponent<WaweManager>();
+        DifficultyManager = GetComponent<DifficultyManager>();
     }
-
-    public void LoadWawe(Wawe wawe) {
-        OnWaweLoad.Invoke(wawe);
-    }
-
-    public void LoadDifficulty(DifficultySettings difficultySettings) {
-        CurrentDifficulty = difficultySettings;
-    }
-    
 
 }

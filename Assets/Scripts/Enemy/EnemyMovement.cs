@@ -8,7 +8,7 @@ public class EnemyMovement : MonoBehaviour {
    }
 
     void Update() {
-        transform.Translate(Vector3.down * enemyBase.EnemyData.speed * GameManager.Instance.CurrentDifficulty.speedMultiplier * Time.deltaTime);
+        transform.Translate(Vector3.down * enemyBase.EnemyData.speed * GameManager.Instance.DifficultyManager.CurrentDifficulty.speedMultiplier * Time.deltaTime);
     }
     
 }

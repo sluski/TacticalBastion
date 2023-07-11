@@ -11,7 +11,7 @@ public class EnemyAttack : MonoBehaviour {
         if(collision.gameObject.CompareTag("Wall")) {
             var healthComponent = collision.gameObject.GetComponent<Health>();
             if(healthComponent != null) {
-                healthComponent.TakeDamage(enemyBase.EnemyData.damage * GameManager.Instance.CurrentDifficulty.damageMultiplier);
+                healthComponent.TakeDamage(enemyBase.EnemyData.damage * GameManager.Instance.DifficultyManager.CurrentDifficulty.damageMultiplier);
             }
             Destroy(gameObject);
         }
